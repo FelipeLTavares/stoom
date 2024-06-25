@@ -4,6 +4,8 @@ import com.stoom.stoom.dtos.produto.ProdutoDto;
 import com.stoom.stoom.dtos.produto.ProdutoFilterDto;
 import com.stoom.stoom.entities.Produto;
 import com.stoom.stoom.services.ProdutoService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produtos")
+@Tag(name = "Produtos")
 public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;

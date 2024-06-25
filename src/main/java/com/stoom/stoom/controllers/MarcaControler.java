@@ -3,12 +3,14 @@ package com.stoom.stoom.controllers;
 import com.stoom.stoom.dtos.marca.MarcaDto;
 import com.stoom.stoom.entities.Marca;
 import com.stoom.stoom.services.MarcaService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/marca")
+@Tag(name = "Marcas")
 public class MarcaControler {
     @Autowired
     private MarcaService marcaService;

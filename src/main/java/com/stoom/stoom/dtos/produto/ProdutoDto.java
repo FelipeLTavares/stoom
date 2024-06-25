@@ -22,11 +22,12 @@ public class ProdutoDto {
     private String titulo;
     @NotEmpty
     private String descricao;
-    @NotEmpty
+    @NotNull
     private Categoria categoria;
-    @NotEmpty
+    @NotNull
     private Marca marca;
     @NotNull
     @Positive
     private BigDecimal preco;
+    private Boolean ativo;
 }

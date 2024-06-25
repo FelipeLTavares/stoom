@@ -34,6 +34,9 @@ public class Produto {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
+    @Column(nullable = false)
+    private boolean ativo;
+
     public Produto (ProdutoDto dto) {
         this.titulo = dto.getTitulo();
         this.descricao = dto.getDescricao();

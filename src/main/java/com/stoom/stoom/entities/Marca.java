@@ -17,6 +17,7 @@ public class Marca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "nome", unique = true, nullable = false)
     private String nome;
 
     public Marca (MarcaDto dto) {

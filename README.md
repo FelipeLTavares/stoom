@@ -1,10 +1,24 @@
 # API de Gerenciamento de Produtos
 
 Esta API permite o gerenciamento de produtos, categorias e marcas, sendo possível filtrar os produtos de diversas formas.
+Esse projeto surgiu de um teste técnico que tem como requisitos básicos:
+
+1. Deve ser desenvolvida uma API de CRUD de produtos
+2. Os produtos devem ser enriquecidos com as informações que você julgar relevante para o funcionamento em uma loja, algumas são obrigatórias:
+    - Categorias
+    - Marca
+    - Preços
+3. Deve existir um endpoint na API para a busca de produtos que será utilizada na loja
+4. Deve existir um endpoint que lista os produtos de uma determinada Marca
+5. Deve existir um endpoint que lista os produtos de uma determinada Categoria
+6. Produtos podem ser inativados para não aparecerem na busca ou nas listagens sem a necessidade de serem deletados para poderem ser reativados posteriormente
+7. Marcas e categorias também podem ser inativados para não aparecerem na loja
+
+Além desses requisitos, adicionei rotas de criação e listagem de novas marcas e categorias. Para fins de exemplo, são criados inicialmente duas marcas e duas categorias de exemplo, com ids 1 e 2 (para ambas entidades).
 
 ## Tecnologias Utilizadas
 
-- Java 17
+- Java 21
 - Spring Boot 3.3.1
 - Maven
 - H2 Database

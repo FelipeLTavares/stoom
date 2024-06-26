@@ -9,4 +9,8 @@ public interface CategoriaService {
 
     Categoria createOne (CategoriaDto dto);
 
+    void inativarCategoria(Long id);
+
+    void ativarCategoria(Long id);
+
 }

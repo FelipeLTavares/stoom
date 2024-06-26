@@ -19,6 +19,7 @@ public class Marca {
     private Long id;
     @Column(name = "nome", unique = true, nullable = false)
     private String nome;
+    private Boolean ativo;
 
     public Marca (MarcaDto dto) {
         this.nome = dto.getNome();

@@ -5,8 +5,8 @@ import com.stoom.stoom.dtos.produto.ProdutoFilterDto;
 import com.stoom.stoom.entities.Categoria;
 import com.stoom.stoom.entities.Marca;
 import com.stoom.stoom.entities.Produto;
-import com.stoom.stoom.exceptions.customExceptions.InvalidCategoriaException;
-import com.stoom.stoom.exceptions.customExceptions.InvalidMarcaException;
+import com.stoom.stoom.exceptions.customExceptions.CategoriaNotFoundException;
+import com.stoom.stoom.exceptions.customExceptions.MarcaNotFoundException;
 import com.stoom.stoom.exceptions.customExceptions.ProdutoNotFoundException;
 import com.stoom.stoom.repositories.CategoriaRepository;
 import com.stoom.stoom.repositories.MarcaRepository;
@@ -66,9 +66,9 @@ public class ProdutoServiceImp implements ProdutoService {
     public Produto createOne (ProdutoDto dto) {
         Produto produto = new Produto(dto);
 
-        Marca marca = findMarca(dto.getMarca().getId()).orElseThrow(InvalidMarcaException::new);
+        Marca marca = findMarca(dto.getMarca().getId()).orElseThrow(MarcaNotFoundException::new);
 
-        Categoria categoria = findCategoria(dto.getCategoria().getId()).orElseThrow(InvalidCategoriaException::new);
+        Categoria categoria = findCategoria(dto.getCategoria().getId()).orElseThrow(CategoriaNotFoundException::new);
 
         produto.setCategoria(categoria);
         produto.setMarca(marca);

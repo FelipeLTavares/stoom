@@ -3,7 +3,7 @@ package com.stoom.stoom.services;
 import com.stoom.stoom.dtos.produto.ProdutoDto;
 import com.stoom.stoom.dtos.produto.ProdutoFilterDto;
 import com.stoom.stoom.entities.Produto;
-import com.stoom.stoom.exceptions.customExceptions.InvalidMarcaException;
+import com.stoom.stoom.exceptions.customExceptions.MarcaNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

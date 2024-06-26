@@ -16,6 +16,7 @@ public class Categoria {
     private Long id;
     @Column(name = "nome", unique = true, nullable = false)
     private String nome;
+    private Boolean ativo;
 
     public Categoria (CategoriaDto dto) {
         this.nome = dto.getNome();

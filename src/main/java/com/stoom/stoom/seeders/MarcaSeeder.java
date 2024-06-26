@@ -15,13 +15,11 @@ public class MarcaSeeder implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (marcaRepository.count() == 0) {
-            Marca marca1 = Marca.builder().nome("Marca A").build();
-            Marca marca2 = Marca.builder().nome("Marca B").build();
+            Marca marca1 = Marca.builder().nome("Marca A").ativo(true).build();
+            Marca marca2 = Marca.builder().nome("Marca B").ativo(true).build();
 
             marcaRepository.save(marca1);
             marcaRepository.save(marca2);
-
-            System.out.println("Dados de Marca foram carregados no banco de dados.");
         }
 
     }

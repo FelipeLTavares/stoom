@@ -1,11 +1,10 @@
 package com.stoom.stoom.specifications;
 
 import com.stoom.stoom.dtos.produto.ProdutoFilterDto;
+import com.stoom.stoom.entities.Categoria;
+import com.stoom.stoom.entities.Marca;
 import com.stoom.stoom.entities.Produto;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.math.BigDecimal;
@@ -60,6 +59,12 @@ public class ProdutoSpecification implements Specification<Produto> {
         if (ativo != null) {
             predicate = criteriaBuilder.and(predicate, criteriaBuilder.isTrue(root.get("ativo")));
         }
+
+        Join<Produto, Marca> marcaJoin = root.join("marca", JoinType.INNER);
+        predicate = criteriaBuilder.and(predicate, criteriaBuilder.isTrue(marcaJoin.get("ativo")));
+
+        Join<Produto, Categoria> categoriaJoin = root.join("categoria", JoinType.INNER);
+        predicate = criteriaBuilder.and(predicate, criteriaBuilder.isTrue(categoriaJoin.get("ativo")));
 
         return predicate;
     }

@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 public class MarcaDto {
     @NotEmpty
     private String nome;
+    private Boolean ativo;
 }

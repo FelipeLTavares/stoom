@@ -15,13 +15,11 @@ public class CategoriaSeeder implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (categoriaRepository.count() == 0) {
-            Categoria categoria1 = Categoria.builder().nome("Categoria X").build();
-            Categoria categoria2 = Categoria.builder().nome("Categoria Y").build();
+            Categoria categoria1 = Categoria.builder().nome("Categoria X").ativo(true).build();
+            Categoria categoria2 = Categoria.builder().nome("Categoria Y").ativo(true).build();
 
             categoriaRepository.save(categoria1);
             categoriaRepository.save(categoria2);
-
-            System.out.println("Dados de Categoria foram carregados no banco de dados.");
         }
     }
 }

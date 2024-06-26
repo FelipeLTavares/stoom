@@ -11,4 +11,8 @@ public interface MarcaService {
 
     Marca createOne(MarcaDto dto);
 
+    void inativarMarca(Long id);
+
+    void ativarMarca (Long id);
+
 }

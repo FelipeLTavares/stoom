@@ -1,7 +1,7 @@
 package com.stoom.stoom.exceptions;
 
-import com.stoom.stoom.exceptions.customExceptions.InvalidCategoriaException;
-import com.stoom.stoom.exceptions.customExceptions.InvalidMarcaException;
+import com.stoom.stoom.exceptions.customExceptions.CategoriaNotFoundException;
+import com.stoom.stoom.exceptions.customExceptions.MarcaNotFoundException;
 import com.stoom.stoom.exceptions.customExceptions.ProdutoNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -46,13 +46,13 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(getErrorsMap(errors), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(InvalidMarcaException.class)
-    public final ResponseEntity<?> handleInvalidMarcaException (InvalidMarcaException ex) {
+    @ExceptionHandler(MarcaNotFoundException.class)
+    public final ResponseEntity<?> handleMarcaNotFoundException (MarcaNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
-    @ExceptionHandler(InvalidCategoriaException.class)
-    public final ResponseEntity<?> handleInvalidMarcaException (InvalidCategoriaException ex) {
+    @ExceptionHandler(CategoriaNotFoundException.class)
+    public final ResponseEntity<?> handleMarcaNotFoundException (CategoriaNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 

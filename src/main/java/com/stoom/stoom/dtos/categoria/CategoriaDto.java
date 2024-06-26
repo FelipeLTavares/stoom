@@ -13,5 +13,6 @@ import lombok.NoArgsConstructor;
 public class CategoriaDto {
     @NotEmpty
     private String nome;
+    private Boolean ativo;
 
 }
